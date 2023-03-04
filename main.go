@@ -22,6 +22,9 @@ func main() {
 	var r registry.Registry
 
 	switch app.Config.Backend {
+	case "blob":
+		r = registry.NewBlobRegistry(app.Config.Blob)
+		break
 	case "s3":
 		r = registry.NewS3Registry(app.Config.S3)
 		break

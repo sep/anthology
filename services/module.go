@@ -1,10 +1,11 @@
 package services
 
 import (
-	"github.com/erikvanbrakel/anthology/app"
-	"github.com/erikvanbrakel/anthology/models"
-	"github.com/erikvanbrakel/anthology/registry"
 	"io"
+
+	"github.com/sep/anthology/app"
+	"github.com/sep/anthology/models"
+	"github.com/sep/anthology/registry"
 )
 
 type ModuleService struct {
