@@ -1,19 +1,21 @@
 package app
 
 import (
+	"os"
+
 	"github.com/jessevdk/go-flags"
 	"github.com/sirupsen/logrus"
-	"os"
 )
 
 var Config = &CommonOptions{}
 
 type CommonOptions struct {
 	Port       int               `short:"p" long:"port" description:"Port the service listens on" default:"8080"`
-	Backend    string            `short:"b" long:"backend" choice:"s3" choice:"filesystem"`
+	Backend    string            `short:"b" long:"backend" choice:"s3" choice:"filesystem" choice:"blob"`
 	S3         S3Options         `group:"S3 configuration" namespace:"s3"`
 	FileSystem FileSystemOptions `group:"Filesystem configuration" namespace:"filesystem"`
 	SSLConfig  SSLOptions        `group:"SSL Configuration" namespace:"ssl"`
+	Blob       BlobOptions       `group:"Blob Configuration" namespace:"blob"`
 }
 
 type SSLOptions struct {
@@ -24,6 +26,11 @@ type SSLOptions struct {
 type S3Options struct {
 	Bucket   string `long:"bucket" description:"S3 bucket to use as backing storage"`
 	Endpoint string `long:"endpoint" description:"S3 endpoint"`
+}
+
+type BlobOptions struct {
+	Account   string `long:"account" description:"Azure storage account to use as backing storage"`
+	Container string `long:"container" description:"Storage container"`
 }
 
 type FileSystemOptions struct {

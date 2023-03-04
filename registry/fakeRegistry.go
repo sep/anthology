@@ -3,9 +3,10 @@ package registry
 import (
 	"bytes"
 	"errors"
-	"github.com/erikvanbrakel/anthology/models"
 	"io"
 	"strings"
+
+	"github.com/sep/anthology/models"
 )
 
 type InMemoryRegistry struct {

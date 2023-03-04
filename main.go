@@ -2,14 +2,15 @@ package main
 
 import (
 	"fmt"
-	"github.com/erikvanbrakel/anthology/api/v1"
-	"github.com/erikvanbrakel/anthology/app"
-	"github.com/erikvanbrakel/anthology/registry"
-	"github.com/erikvanbrakel/anthology/services"
-	"github.com/go-ozzo/ozzo-routing"
-	"github.com/go-ozzo/ozzo-routing/content"
-	"github.com/sirupsen/logrus"
 	"net/http"
+
+	routing "github.com/go-ozzo/ozzo-routing"
+	"github.com/go-ozzo/ozzo-routing/content"
+	v1 "github.com/sep/anthology/api/v1"
+	"github.com/sep/anthology/app"
+	"github.com/sep/anthology/registry"
+	"github.com/sep/anthology/services"
+	"github.com/sirupsen/logrus"
 )
 
 func main() {

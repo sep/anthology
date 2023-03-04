@@ -5,15 +5,16 @@ import (
 	"testing"
 
 	"bytes"
-	"github.com/erikvanbrakel/anthology/api/v1"
-	"github.com/erikvanbrakel/anthology/app"
-	"github.com/erikvanbrakel/anthology/registry"
-	"github.com/erikvanbrakel/anthology/services"
-	"github.com/gavv/httpexpect"
-	"github.com/go-ozzo/ozzo-routing"
-	"github.com/go-ozzo/ozzo-routing/content"
-	"github.com/sirupsen/logrus"
 	"net/http"
+
+	"github.com/gavv/httpexpect"
+	routing "github.com/go-ozzo/ozzo-routing"
+	"github.com/go-ozzo/ozzo-routing/content"
+	v1 "github.com/sep/anthology/api/v1"
+	"github.com/sep/anthology/app"
+	"github.com/sep/anthology/registry"
+	"github.com/sep/anthology/services"
+	"github.com/sirupsen/logrus"
 )
 
 type apiTestCase struct {

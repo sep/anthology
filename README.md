@@ -17,7 +17,7 @@ overriding the command.
 
 __running on port `80`, using `my-module-bucket` for storage:__
 
-`docker run -p 80:80 erikvanbrakel/anthology --port=80 --backend=s3 --s3.bucket=my-module-bucket`
+`docker run -p 80:80 sep/anthology --port=80 --backend=s3 --s3.bucket=my-module-bucket`
 
 __using docker-compose__
 ```yaml
@@ -27,7 +27,7 @@ services:
 
   registry:
     command: --port=80 --backend=s3 --s3.bucket=my-module-bucket
-    build: erikvanbrakel/anthology:latest
+    build: sep/anthology:latest
     ports:
       - 80:80
 ```
@@ -38,7 +38,7 @@ The easiest way to deploy is to use the [anthology module][anthology-module] in 
 
 ```hcl
 module "anthology" {
-  source  = "erikvanbrakel/anthology/aws"
+  source  = "sep/anthology/aws"
   version = "0.0.2"
 
   storage_bucket = "this-bucket-stores-my-modules"
@@ -75,5 +75,5 @@ are aware of the cost before provisioning!
 | --s3.endpoint         | Alternative S3 endpoint           | http[s]://[hostname]:[port]|         |
 
 [terraform-registry]: https://registry.terraform.io/
-[anthology-module]: https://registry.terraform.io/modules/erikvanbrakel/anthology/aws/
-[docker-hub]: https://hub.docker.com/r/erikvanbrakel/anthology/
+[anthology-module]: https://registry.terraform.io/modules/sep/anthology/aws/
+[docker-hub]: https://hub.docker.com/r/sep/anthology/

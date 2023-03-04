@@ -2,15 +2,16 @@ package registry
 
 import (
 	"bytes"
+	"io"
+	"strings"
+
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/awserr"
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/s3"
-	"github.com/erikvanbrakel/anthology/app"
-	"github.com/erikvanbrakel/anthology/models"
+	"github.com/sep/anthology/app"
+	"github.com/sep/anthology/models"
 	"github.com/sirupsen/logrus"
-	"io"
-	"strings"
 )
 
 type S3Registry struct {

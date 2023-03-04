@@ -1,9 +1,9 @@
 FROM golang:alpine as build
 
 RUN mkdir /registry
-ADD . /src/github.com/erikvanbrakel/anthology
+ADD . /src/github.com/sep/anthology
 
-WORKDIR /src/github.com/erikvanbrakel/anthology
+WORKDIR /src/github.com/sep/anthology
 
 ENV GOPATH /
 
@@ -13,7 +13,7 @@ FROM alpine:latest
 
 RUN apk update && apk add ca-certificates && rm -rf /var/cache/apk/*
 
-COPY --from=build /src/github.com/erikvanbrakel/anthology/anthology /registry/anthology
+COPY --from=build /src/github.com/sep/anthology/anthology /registry/anthology
 
 WORKDIR /registry
 

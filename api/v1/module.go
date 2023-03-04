@@ -2,13 +2,14 @@ package v1
 
 import (
 	"fmt"
-	"github.com/blang/semver"
-	"github.com/erikvanbrakel/anthology/app"
-	"github.com/erikvanbrakel/anthology/models"
-	"github.com/go-ozzo/ozzo-routing"
 	"io"
 	"net/http"
 	"strconv"
+
+	"github.com/blang/semver"
+	routing "github.com/go-ozzo/ozzo-routing"
+	"github.com/sep/anthology/app"
+	"github.com/sep/anthology/models"
 )
 
 type (

@@ -2,8 +2,9 @@ package registry
 
 import (
 	"bytes"
-	"github.com/erikvanbrakel/anthology/models"
 	"io"
+
+	"github.com/sep/anthology/models"
 )
 
 type Registry interface {

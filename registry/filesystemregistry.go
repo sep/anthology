@@ -3,14 +3,15 @@ package registry
 import (
 	"bytes"
 	"errors"
-	"github.com/erikvanbrakel/anthology/app"
-	"github.com/erikvanbrakel/anthology/models"
-	"github.com/sirupsen/logrus"
 	"io"
 	"os"
 	"path"
 	"path/filepath"
 	"strings"
+
+	"github.com/sep/anthology/app"
+	"github.com/sep/anthology/models"
+	"github.com/sirupsen/logrus"
 )
 
 type FilesystemRegistry struct {
